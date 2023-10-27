@@ -1,56 +1,62 @@
 # Discord Bot: Oreo
 
-This is a simple Discord bot named "Oreo" that responds to specific commands and welcomes new members when they join a server.
+Oreo is a simple Discord bot with basic functionalities. It can greet users, echo messages, welcome members when they join, and provide current weather information for a given city.
 
-## Requirements:
-- Python 3.x
-- `discord.py` library with app commands
+## Features
 
-## Setup:
+1. **Greeting**: The bot can greet users.
+2. **Echo**: The bot can repeat what you ask it to say.
+3. **Welcome**: The bot sends a welcome message to new members when they join the server.
+4. **Weather**: Users can get the current weather for a given city.
 
-1. **Token**:
-    Before running the bot, you need to have a Discord token. This token should be saved in a file named `token.txt`. The first line of this file should be the token itself.
-   
-2. **Installing required packages**:
-   Use pip to install the required packages:
+## Commands
+
+1. `!hello`: Greets the user.
+2. `!say [message]`: The bot will echo back the message.
+3. `!weather [city_name]`: Fetches the weather for the given city.
+
+## Prerequisites
+
+- Python
+- Discord.py library
+- An OpenWeatherMap API key
+
+## Installation and Setup
+
+1. **Token Setup**:
+   Save your Discord bot token in a file named `token.txt`.
+
+2. **API Key Setup**:
+   Replace the existing API key in the `weather` function with your OpenWeatherMap API key.
+
+3. **Python Libraries**:
+   Install the required libraries using pip:
+
+   ```bash
+   pip install discord.py requests
    ```
-   pip install discord.py
+
+4. **Run the Bot**:
+   Simply run the provided python script to start the bot:
+
+   ```bash
+   python [filename].py
    ```
 
-## Features:
+## Known Issues
 
-1. **Startup**: 
-    - When the bot starts, it will print "Bot is up and ready :)".
-    - It will then attempt to sync its slash commands with Discord, and print the number of synced commands.
+- Ensure your bot has the necessary permissions to read messages and send messages in the channel.
+- The weather command fetches the weather using OpenWeatherMap. Ensure you use a valid and active API key, or the command will fail.
 
-2. **Commands**:
-   
-   - `!hello`: 
-       The bot responds with a greeting and mentions the user.
-       Example:
-       ```
-       User: !hello
-       Oreo: Hello @User! my name is Oreo.....Nice to meet you.....:)))
-       ```
-   
-   - `!say <message>`:
-       The bot will respond saying the message as if it was said by the user.
-       Example:
-       ```
-       User: !say I love ice cream
-       Oreo: User said: 'I love ice cream'
-       ```
+## Future Work
 
-3. **Member Welcome**:
-    Whenever a new member joins the server, the bot will send a welcome message in the specified channel with the ID `1117138124133367872`.
+- Add more detailed error handling for edge cases, such as when the city is not found or the API limit is reached.
+- Expand bot functionality with more useful and interactive commands.
 
-## Running the Bot:
+## Contributing
 
-Simply execute the provided Python script:
-```
-python <filename>.py
-```
+Contributions are always welcome. Ensure you follow the standard coding conventions and comment on your changes adequately.
 
-Replace `<filename>` with the name you've saved the provided code under.
+## License
 
-**Note**: Ensure you replace the channel ID in the `on_member_join` function with the ID of your desired welcome channel if it's different. Also, always ensure to keep your token secret.
+This project is open-source and available to anyone. Ensure to mention the original author when using or modifying this bot for your purposes.
